@@ -11,7 +11,7 @@ app = FastAPI(debug=True)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="10218M@ple",
+    password="",
     database="income_expense_tracker"
 )
 

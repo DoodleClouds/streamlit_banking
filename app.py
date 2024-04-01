@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import requests
 from login_register import login_register
-from main_app import main_app
+from dashboard import main_app
 
 # Set the base URL of your FastAPI backend
 base_url = "http://localhost:8082"

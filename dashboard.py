@@ -48,8 +48,11 @@ def main_app():
             account_names = [accounts[i]['account_name'] for i in range(len(accounts))]
             account_dict = dict(zip(account_ids, account_names))
             headers = {"Authorization": f"Bearer {st.session_state.access_token}"}
-            response = requests.post(f"{base_url}/transactions/by_accounts", json=transaction_request, headers=headers)
-            transactions = response.json()
+            try:
+                response = requests.post(f"{base_url}/transactions/by_accounts", json=transaction_request, headers=headers)
+                transactions = response.json()
+            except:
+                transactions = {}
 
             if len(transactions) > 0:
                 # Fetch categories
